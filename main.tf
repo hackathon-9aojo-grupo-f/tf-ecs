@@ -95,9 +95,6 @@ resource "aws_db_instance" "database" {
   password             = "123456-Ab"
   parameter_group_name = "default.mysql5.7"
   skip_final_snapshot  = true
-  tags = {
-    Name = "my-database"
-  }
 }
 
 
