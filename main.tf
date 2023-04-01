@@ -85,4 +85,19 @@ resource "aws_ecs_service" "service" {
   }
 }
 
+resource "aws_db_instance" "database" {
+  allocated_storage    = 20
+  engine               = "mysql"
+  engine_version       = "5.7"
+  instance_class       = "db.t2.micro"
+  db_name              = "video"
+  username             = "myuser"
+  password             = "123456-Ab"
+  parameter_group_name = "default.mysql5.7"
+  skip_final_snapshot  = true
+  tags = {
+    Name = "my-database"
+  }
+}
+
 
